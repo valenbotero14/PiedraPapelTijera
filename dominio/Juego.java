@@ -83,7 +83,7 @@ public class Juego {
                     }
                     break;
                 default:
-                    return "Error";
+                    return " Hay un Error";
             }
 
         }
