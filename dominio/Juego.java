@@ -4,12 +4,25 @@ public class Juego {
 
     private static String eleccionMaquina;
     private static String Resultado;
-    private static String ResultMiJugada;
-    private static int jugadaMaquina;
+    private static int ResultMiJugada;
     private static int resultadoJugada;
+    private static int ganadasUsuaio;
+    private static int ganadasMaquina;
+    private static int empate;
 
+    public static int getGanadasUsuaio() {
+        return ganadasUsuaio;
+    }
 
-    public static String getResultMiJugada(String miJugada) {
+    public static int getGanadasMaquina() {
+        return ganadasMaquina;
+    }
+
+    public static int getEmpate() {
+        return empate;
+    }
+
+    public static int getResultMiJugada(String miJugada) {
         if(miJugada.equals("Piedra")){
             resultadoJugada = 0;
         }else if (miJugada.equals("Papel")){
@@ -17,18 +30,18 @@ public class Juego {
         }else if (miJugada.equals("Tijera")){
             resultadoJugada = 2;
         }
-        return miJugada;
+        return resultadoJugada;
 
     }
 
     public static String geteleccionMaquina(int jugadaMaquina){
         String resultadoMaquina="";
         if(jugadaMaquina == 0){
-            resultadoMaquina =" Piedra.";
+            resultadoMaquina =" Piedra";
         }else if (jugadaMaquina == 1){
-            resultadoMaquina =" Papel.";
+            resultadoMaquina =" Papel";
         }else if (jugadaMaquina == 2 ){
-            resultadoMaquina = "Tijera.";
+            resultadoMaquina = "Tijera";
         }
         return resultadoMaquina;
 
@@ -38,32 +51,39 @@ public class Juego {
     public static String getResultado(int resultadoJugada, int jugadaMaquina) {
         String resultado = "";
         if (resultadoJugada == jugadaMaquina){
-            resultado = "Es un empate.";
+            resultado = "¡Empate!";
+            empate++;
         } else {
             switch (resultadoJugada) {
                 case 0:
                     if (jugadaMaquina == 1){
-                        resultado = "Perdiste. ";
+                        resultado = "¡Perdiste! ";
+                        ganadasMaquina++;
                     } else {
-                        resultado = "Ganaste. ";
+                        resultado = "¡Ganaste! ";
+                        ganadasUsuaio++;
                     }
                     break;
                 case 1:
                     if ( jugadaMaquina== 2) {
-                        resultado = "Perdiste. ";
+                        resultado = "¡Perdiste! ";
+                        ganadasMaquina++;
                     } else {
-                        resultado = "Ganaste. ";
+                        resultado = "¡Ganaste! ";
+                        ganadasUsuaio++;
                     }
                     break;
                 case 2:
                     if (jugadaMaquina == 0){
-                        resultado = "Perdiste. ";
+                        resultado = "¡Perdiste! ";
+                        ganadasMaquina++;
                     } else {
-                        resultado = "Ganaste. ";
+                        resultado = "¡Ganaste! ";
+                        ganadasMaquina++;
                     }
                     break;
                 default:
-                    return "Se produjo un error";
+                    return "Error";
             }
 
         }
@@ -71,3 +91,5 @@ public class Juego {
         return resultado;
     }
 }
+
+
