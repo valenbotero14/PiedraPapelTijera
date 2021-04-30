@@ -79,7 +79,7 @@ public class Juego {
                         ganadasMaquina++;
                     } else {
                         resultado = "¡Ganaste! ";
-                        ganadasMaquina++;
+                        ganadasUsuaio++;
                     }
                     break;
                 default:
