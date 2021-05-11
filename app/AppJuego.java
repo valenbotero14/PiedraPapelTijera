@@ -8,8 +8,6 @@ import java.util.List;
 
 
 public class AppJuego {
-    private static int resultadoJugada;
-    private static int jugadaMaquina;
 
     public static void main(String[] args) {
         boolean Ejecutar = true;
